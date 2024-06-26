@@ -2,7 +2,7 @@
     import taskGeneralCard from "./cards/taskContent.vue"
     import CreateTaskForm from "./cards/CreateTask.vue"
     import taskCompletionTotal from "./cards/taskTotal.vue"
-
+    import ImageDisplayCard from "./cards/blankImageDisplayCard.vue"
     export default {
         name:"Body",
         props:{
@@ -11,13 +11,17 @@
         components:{
             taskGeneralCard,
             CreateTaskForm,
-            taskCompletionTotal
+            taskCompletionTotal,
+            ImageDisplayCard
         }
     }
 </script>
 
 <template>
-    <div width="100%" class="d-flex  justify-content-center align-items-center m-4 p-2 flex-column ">
+    <div width="100%" class="d-flex  justify-content-center align-items-center m-4 p-2 flex-column row-gap-5 ">
+
+
+
         <div class=" w-75 h-auto p-3 d-flex flex-row gap-5" >
             <CreateTaskForm />
             
@@ -35,7 +39,14 @@
             <taskCompletionTotal :value="new Number(18)" Description="A Quantidade de tarefas concluídas essa semana" />
             <taskCompletionTotal :value="new Number(23)" Description="Sua posição no ranking global, consiga mais pontos para subir" />
         </div>
+
+        <div class=" w-75 h-auto p-3 d-flex justify-content-center align-itens-center flex-row gap-5 flex-wrap">
+            <ImageDisplayCard Author="John Doe" Text="An work spree over the weekend" :Tags="new Array(['Work','Payment'])" />
+            <ImageDisplayCard Author="Steven Yean" Text="An job oportunity nearest to you" :Tags="new Array(['Work','Job'])" />
+            <ImageDisplayCard Author="Alina Mandson" Text="A Online Gym with Trained personel" :Tags="new Array(['Exercise','Comunnity'])" />
+        </div>
     </div>
+
 </template>
 
 

@@ -43,4 +43,6 @@
     .DividedContentElement{
         width: 50%;
     }
+
+    
 </style>
